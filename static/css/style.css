@@ -1,38 +1,26 @@
-/* ════════════════════════════════════════════
-   SmartHome CSS  –  Dark futuristic theme
-   ════════════════════════════════════════════ */
-
-/* ── Tokens ──────────────────────────────── */
 :root {
   --bg-base:      #0d1117;
   --bg-surface:   #161b22;
   --bg-card:      #1c2230;
   --bg-card-hover:#202840;
-
   --accent-blue:  #4d9fff;
   --accent-cyan:  #00d4ff;
   --accent-green: #22c55e;
   --accent-amber: #f59e0b;
   --accent-red:   #ef4444;
   --accent-purple:#a78bfa;
-
   --text-primary: #e6edf3;
   --text-muted:   #7d8590;
   --text-dim:     #484f58;
-
   --border:       rgba(255,255,255,0.07);
   --border-hover: rgba(77,159,255,0.35);
-
   --sidebar-w:    240px;
   --topbar-h:     64px;
   --radius:       14px;
   --radius-sm:    8px;
   --transition:   0.25s cubic-bezier(0.4,0,0.2,1);
 }
-
-/* ── Reset & base ────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
 body {
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
   background: var(--bg-base);
@@ -40,19 +28,12 @@ body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
-
 a { text-decoration: none; color: inherit; }
-
-/* ════════════════════════════════════════════
-   LOGIN PAGE
-   ════════════════════════════════════════════ */
 .login-body {
   background: var(--bg-base);
   overflow: hidden;
   position: relative;
 }
-
-/* Animated background orbs */
 .bg-orb {
   position: fixed;
   border-radius: 50%;
@@ -64,12 +45,10 @@ a { text-decoration: none; color: inherit; }
 .orb-1 { width:480px; height:480px; background:var(--accent-blue);  top:-120px; left:-120px; animation-delay:0s; }
 .orb-2 { width:380px; height:380px; background:var(--accent-purple); bottom:-80px; right:-80px; animation-delay:-4s; }
 .orb-3 { width:280px; height:280px; background:var(--accent-cyan);   top:50%; left:50%; transform:translate(-50%,-50%); animation-delay:-8s; }
-
 @keyframes floatOrb {
   0%,100% { transform: translate(0,0) scale(1); }
   50%      { transform: translate(30px, 20px) scale(1.08); }
 }
-
 .login-card {
   background: var(--bg-surface);
   border: 1px solid var(--border);
@@ -81,13 +60,10 @@ a { text-decoration: none; color: inherit; }
   box-shadow: 0 25px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(77,159,255,0.08);
   animation: slideUp 0.5s cubic-bezier(0.34,1.56,0.64,1) both;
 }
-
 @keyframes slideUp {
   from { opacity:0; transform: translateY(30px) scale(0.97); }
   to   { opacity:1; transform: translateY(0) scale(1); }
 }
-
-/* Brand */
 .brand-icon {
   width: 72px; height: 72px;
   background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
@@ -104,8 +80,6 @@ a { text-decoration: none; color: inherit; }
   background-clip: text;
 }
 .brand-sub { color: var(--text-muted); font-size: 0.875rem; }
-
-/* Input */
 .input-icon-wrap { position: relative; }
 .input-icon {
   position: absolute; left: 14px; top: 50%; transform: translateY(-50%);
@@ -131,7 +105,6 @@ a { text-decoration: none; color: inherit; }
   padding: 4px; z-index: 2;
 }
 .password-toggle:hover { color: var(--accent-blue); }
-
 .login-btn {
   background: linear-gradient(135deg, var(--accent-blue), #2563eb);
   color: #fff; border: none; border-radius: var(--radius-sm);
@@ -145,20 +118,13 @@ a { text-decoration: none; color: inherit; }
   color: #fff;
 }
 .login-btn:active { transform: translateY(0); }
-
 .login-alert {
   background: rgba(239,68,68,0.1); border: 1px solid rgba(239,68,68,0.3);
   color: #fca5a5; border-radius: var(--radius-sm);
 }
 .hint-text { color: var(--text-muted); font-size: 0.8rem; }
 .hint-text strong { color: var(--accent-cyan); }
-
-/* ════════════════════════════════════════════
-   DASHBOARD LAYOUT
-   ════════════════════════════════════════════ */
 .dashboard-body { display: flex; min-height: 100vh; overflow-x: hidden; }
-
-/* ── Sidebar ─────────────────────────────── */
 .sidebar {
   width: var(--sidebar-w);
   background: var(--bg-surface);
@@ -168,7 +134,6 @@ a { text-decoration: none; color: inherit; }
   z-index: 200;
   transition: transform var(--transition);
 }
-
 .sidebar-brand {
   display: flex; align-items: center; gap: 10px;
   padding: 1.25rem 1.5rem;
@@ -181,7 +146,6 @@ a { text-decoration: none; color: inherit; }
   background-clip: text;
 }
 .brand-name { font-size: 1.1rem; font-weight: 700; letter-spacing: -0.02em; }
-
 .sidebar-nav {
   flex: 1; padding: 1rem 0.75rem; display: flex; flex-direction: column; gap: 4px;
 }
@@ -198,7 +162,7 @@ a { text-decoration: none; color: inherit; }
 }
 .sidebar-nav .nav-link i { width: 16px; text-align: center; }
 
-.sidebar-footer {
+.sidebr-footer {
   padding: 1rem 1.25rem;
   border-top: 1px solid var(--border);
   display: flex; align-items: center; justify-content: space-between; gap: 10px;
@@ -217,16 +181,12 @@ a { text-decoration: none; color: inherit; }
   transition: all var(--transition);
 }
 .logout-btn:hover { color: var(--accent-red); background: rgba(239,68,68,0.1); }
-
-/* ── Main content ────────────────────────── */
 .main-content {
   margin-left: var(--sidebar-w);
   flex: 1; display: flex; flex-direction: column;
   min-height: 100vh;
   transition: margin-left var(--transition);
 }
-
-/* ── Top bar ─────────────────────────────── */
 .topbar {
   height: var(--topbar-h);
   background: var(--bg-surface);
@@ -241,11 +201,9 @@ a { text-decoration: none; color: inherit; }
   transition: all var(--transition); display: none;
 }
 .sidebar-toggle:hover { background: var(--bg-card); color: var(--text-primary); }
-
 .topbar-title { flex: 1; }
 .page-title { font-size: 1.1rem; font-weight: 700; margin: 0; }
 .page-sub   { font-size: 0.75rem; color: var(--text-muted); }
-
 .status-dot-wrap { display: flex; align-items: center; gap: 8px; }
 .status-dot {
   width: 8px; height: 8px; border-radius: 50%;
@@ -257,10 +215,7 @@ a { text-decoration: none; color: inherit; }
   50%      { box-shadow: 0 0 0 5px rgba(34,197,94,0); }
 }
 .status-text { font-size: 0.8rem; color: var(--text-muted); }
-
 .content-area { padding: 2rem 1.5rem; }
-
-/* ── Stat cards ──────────────────────────── */
 .stat-card {
   background: var(--bg-card);
   border: 1px solid var(--border);
@@ -270,7 +225,6 @@ a { text-decoration: none; color: inherit; }
   transition: all var(--transition);
 }
 .stat-card:hover { border-color: var(--border-hover); transform: translateY(-2px); }
-
 .stat-icon {
   width: 48px; height: 48px; border-radius: 12px;
   display: flex; align-items: center; justify-content: center;
@@ -280,11 +234,8 @@ a { text-decoration: none; color: inherit; }
 .stat-icon.active  { background:rgba(34,197,94,0.12);  color:var(--accent-green);  }
 .stat-icon.lights  { background:rgba(245,158,11,0.12); color:var(--accent-amber);  }
 .stat-icon.locks   { background:rgba(167,139,250,0.12);color:var(--accent-purple); }
-
 .stat-number { font-size: 1.75rem; font-weight: 700; line-height: 1; }
 .stat-label  { font-size: 0.75rem; color: var(--text-muted); margin-top: 2px; }
-
-/* ── Section headers ─────────────────────── */
 .section-header {
   display: flex; align-items: center; justify-content: space-between;
   margin-bottom: 1rem;
@@ -301,16 +252,11 @@ a { text-decoration: none; color: inherit; }
 .lights-icon { background:rgba(245,158,11,0.15); color:var(--accent-amber); }
 .fan-icon    { background:rgba(77,159,255,0.15); color:var(--accent-blue);  }
 .lock-icon   { background:rgba(167,139,250,0.15);color:var(--accent-purple);}
-
 .section-badge {
   font-size: 0.72rem; color: var(--text-muted);
   background: var(--bg-card); padding: 3px 10px; border-radius: 20px;
   border: 1px solid var(--border);
 }
-
-/* ════════════════════════════════════════════
-   DEVICE CARDS
-   ════════════════════════════════════════════ */
 .device-card {
   background: var(--bg-card);
   border: 1px solid var(--border);
@@ -324,14 +270,10 @@ a { text-decoration: none; color: inherit; }
 .device-card:hover { border-color: var(--border-hover); transform: translateY(-3px); }
 .device-card.active { border-color: rgba(245,158,11,0.3); }
 .device-card.locked { border-color: rgba(167,139,250,0.3); }
-
-/* Device visual area */
 .device-visual {
   position: relative; width: 100px; height: 100px;
   display: flex; align-items: center; justify-content: center;
 }
-
-/* ── Light bulb ──────────────────────────── */
 .light-icon-wrap {
   width: 70px; height: 70px; border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
@@ -348,8 +290,6 @@ a { text-decoration: none; color: inherit; }
   border-color: rgba(245,158,11,0.4);
   box-shadow: 0 0 20px rgba(245,158,11,0.3);
 }
-
-/* Glow ring */
 .glow-ring {
   position: absolute; inset: 0; border-radius: 50%;
   background: radial-gradient(circle, rgba(245,158,11,0.25) 0%, transparent 70%);
@@ -364,15 +304,12 @@ a { text-decoration: none; color: inherit; }
   0%,100% { transform: scale(1);   opacity: 0.7; }
   50%      { transform: scale(1.2); opacity: 1;   }
 }
-
-/* Light rays */
 .light-rays {
   position: absolute; inset: 0;
   display: flex; align-items: center; justify-content: center;
   opacity: 0; transition: opacity 0.4s ease;
 }
 .device-card.active .light-rays { opacity: 1; }
-
 .light-rays span {
   position: absolute; width: 2px; height: 16px;
   background: linear-gradient(to top, var(--accent-amber), transparent);
@@ -388,13 +325,10 @@ a { text-decoration: none; color: inherit; }
 .light-rays span:nth-child(6) { transform: rotate(225deg) translateY(-50px); animation-delay:1.25s; }
 .light-rays span:nth-child(7) { transform: rotate(270deg) translateY(-50px); animation-delay:1.5s; }
 .light-rays span:nth-child(8) { transform: rotate(315deg) translateY(-50px); animation-delay:1.75s; }
-
 @keyframes rayPulse {
   0%,100% { opacity: 0.5; height: 14px; }
   50%      { opacity: 1;   height: 18px; }
 }
-
-/* ── Fan ─────────────────────────────────── */
 .fan-icon-wrap {
   width: 70px; height: 70px; border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
@@ -428,8 +362,6 @@ a { text-decoration: none; color: inherit; }
   0%,100% { transform: scale(1); }
   50%      { transform: scale(1.15); }
 }
-
-/* ── Door Lock ───────────────────────────── */
 .lock-icon-wrap {
   width: 70px; height: 70px; border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
@@ -445,7 +377,6 @@ a { text-decoration: none; color: inherit; }
   background: rgba(167,139,250,0.1);
   border-color: rgba(167,139,250,0.4);
 }
-
 .lock-pulse {
   position: absolute; inset: 0; border-radius: 50%;
   background: radial-gradient(circle, rgba(167,139,250,0.2) 0%, transparent 70%);
@@ -458,8 +389,6 @@ a { text-decoration: none; color: inherit; }
   0%,100% { transform: scale(1); opacity: 0.6; }
   50%      { transform: scale(1.25); opacity: 1; }
 }
-
-/* lock shudder on toggle */
 @keyframes lockShudder {
   0%,100% { transform: translateX(0); }
   20%     { transform: translateX(-4px) rotate(-3deg); }
@@ -468,10 +397,7 @@ a { text-decoration: none; color: inherit; }
   80%     { transform: translateX( 3px) rotate( 2deg); }
 }
 .shudder { animation: lockShudder 0.4s ease; }
-
-/* ── Device info & badges ────────────────── */
 .device-name { font-size: 0.9rem; font-weight: 600; margin: 0 0 6px; }
-
 .device-status-badge {
   font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em;
   padding: 3px 10px; border-radius: 20px;
@@ -493,8 +419,6 @@ a { text-decoration: none; color: inherit; }
   background: rgba(245,158,11,0.1); color: var(--accent-amber);
   border: 1px solid rgba(245,158,11,0.25);
 }
-
-/* ── Toggle button ───────────────────────── */
 .toggle-btn {
   width: 100%; padding: 0.6rem 1rem;
   border: none; border-radius: var(--radius-sm);
@@ -506,11 +430,8 @@ a { text-decoration: none; color: inherit; }
 .btn-on     { background:rgba(34,197,94,0.15);   color:var(--accent-green); }
 .btn-locked { background:rgba(167,139,250,0.15); color:var(--accent-purple);}
 .btn-unlocked{ background:rgba(245,158,11,0.15); color:var(--accent-amber); }
-
 .toggle-btn:hover { opacity: 0.85; transform: translateY(-1px); }
 .toggle-btn:active { transform: scale(0.97); }
-
-/* ── Toast ───────────────────────────────── */
 #liveToast {
   background: var(--bg-card);
   border: 1px solid var(--border) !important;
@@ -518,10 +439,6 @@ a { text-decoration: none; color: inherit; }
   border-radius: var(--radius-sm);
   min-width: 240px;
 }
-
-/* ════════════════════════════════════════════
-   RESPONSIVE
-   ════════════════════════════════════════════ */
 @media (max-width: 768px) {
   .sidebar {
     transform: translateX(-100%);
@@ -534,18 +451,13 @@ a { text-decoration: none; color: inherit; }
   .sidebar-toggle { display: flex; }
   .topbar-actions .status-text { display: none; }
 }
-
 @media (max-width: 480px) {
   .content-area { padding: 1.25rem 1rem; }
   .login-card { margin: 1rem; padding: 1.75rem 1.5rem; }
 }
-
-/* ── Scrollbar ───────────────────────────── */
 ::-webkit-scrollbar       { width: 6px; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
-
-/* ── Reduced motion ──────────────────────── */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
